@@ -1,0 +1,11 @@
+prefix=/Users/enamul/Desktop/Data Science Projects/Customer Segmentation/venv
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+toolexeclibdir=${libdir}
+includedir=/Users/enamul/Desktop/Data Science Projects/Customer Segmentation/venv/include
+
+Name: libffi
+Description: Library supporting Foreign Function Interfaces
+Version: 3.4.4
+Libs: -L${toolexeclibdir} -lffi
+Cflags: -I${includedir}

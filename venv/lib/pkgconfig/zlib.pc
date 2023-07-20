@@ -1,0 +1,13 @@
+prefix=/Users/enamul/Desktop/Data Science Projects/Customer Segmentation/venv
+exec_prefix=/Users/enamul/Desktop/Data Science Projects/Customer Segmentation/venv
+libdir=/Users/enamul/Desktop/Data Science Projects/Customer Segmentation/venv/lib
+sharedlibdir=/Users/enamul/Desktop/Data Science Projects/Customer Segmentation/venv/lib
+includedir=/Users/enamul/Desktop/Data Science Projects/Customer Segmentation/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
