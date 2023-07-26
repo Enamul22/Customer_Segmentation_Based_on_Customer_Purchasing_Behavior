@@ -1,25 +1,19 @@
-from flask import Flask, request, jsonify
-import joblib
-import pandas as pd
-
-# Load the model
-model = joblib.load('path_to_your_model.pkl')
+from flask import Flask, request, render_template
+from joblib import load
 
 app = Flask(__name__)
+model = load('/Users/enamul/Desktop/Data Science Projects/Customer Segmentation/model/cs_model.pkl')
 
-@app.route('/api', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def predict():
-    # Get data from POST request
-    data = request.get_json()
-    
-    # Convert data into dataframe
-    data = pd.DataFrame(data)
-    
-    # Make prediction
-    cluster = model.predict(data)
-    
-    # Return results
-    return jsonify(cluster.tolist())
+    if request.method == 'POST':
+        data = request.form
+        recency = float(data['recency'])
+        frequency = float(data['frequency'])
+        monetary_value = float(data['monetary_value'])
+        prediction = model.predict([[recency, frequency, monetary_value]])[0]
+        return render_template('index.html', prediction=prediction)
+    return render_template('index.html', prediction=None)
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(debug=True)

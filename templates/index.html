@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Predict - Customer Segmentation</title>
-</head>
-<body>
-    <h1>Enter your data:</h1>
-    <form action="/api" method="post">
-        <!-- Add form fields for user input here -->
-        <input type="submit" value="Predict">
-    </form>
-</body>
+    <head>
+        <title>Customer Segmentation Predictor</title>
+    </head>
+    <body>
+        <h1>Customer Segmentation Predictor</h1>
+
+        <form action="/predict" method="post">
+            <label for="recency">Recency:</label>
+            <input type="number" id="recency" name="recency" required><br>
+
+            <label for="frequency">Frequency:</label>
+            <input type="number" id="frequency" name="frequency" required><br>
+
+            <label for="monetary_value">Monetary Value:</label>
+            <input type="number" id="monetary_value" name="monetary_value" required><br>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction is not none %}
+            <h2>Prediction: {{ prediction }}</h2>
+        {% endif %}
+    </body>
 </html>
