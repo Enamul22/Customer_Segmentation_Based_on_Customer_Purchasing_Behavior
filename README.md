@@ -1,5 +1,7 @@
 # Customer_Segmentation_Based_on_Purchasing_Behavior
 
+![Snake Plot](<Images/Snake Plot.png>)
+
 ## Introduction
 
 This repository contains code and resources for a customer segmentation project using the Online Retail II dataset. The aim of the project is to segment customers into different groups based on their purchasing behavior (Recency, Frequency, and Monetary value - RFM) and make business decision based on their purchasing behavior. 
